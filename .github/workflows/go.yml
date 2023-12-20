@@ -24,5 +24,6 @@ jobs:
     - name: Build
       run: cd api; go build
 
-    - name: Test
-      run: go test
+    # Only when tests are present
+    #- name: Test
+    # run: cd api; go test
