@@ -29,16 +29,17 @@ jobs:
     - name: Build
       run: cd api; go build
 
-    # Only when tests are present
-    #- name: Test
-    # run: cd api; go test
+# Only when tests are present
+#    - name: Test
+#     run: cd api; go test
+
   docker-build:
     name: docker-compose
     needs: golang-test
     runs-on: ubuntu-latest
     steps:
       - name: Set up Docker Stack
-        run: docker compose up -d
+        run: cd ..; docker compose up -d
 
 # For Deployment: Change configuration before uncommenting, and replace the docker stack set up with the following
 #     - name: Set up Docker Buildx
