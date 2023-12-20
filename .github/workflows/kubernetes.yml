@@ -1,0 +1,14 @@
+name: Go
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  Deployment:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: Azure/setup-kubectl@v3.2
