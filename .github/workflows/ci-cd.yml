@@ -38,8 +38,9 @@ jobs:
     needs: golang-test
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      
       - name: Set up Docker Stack
-        working-directory: /Go-REST-Kubernetes-TestTask
         run: docker compose up -d
 
 # For Deployment: Change configuration before uncommenting, and replace the docker stack set up with the following
