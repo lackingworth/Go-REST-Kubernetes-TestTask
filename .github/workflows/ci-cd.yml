@@ -39,7 +39,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Docker Stack
-        run: cd 'Go-REST-Kubernetes-TestTask'; docker compose up -d
+        working-directory: /Go-REST-Kubernetes-TestTask
+        run: docker compose up -d
 
 # For Deployment: Change configuration before uncommenting, and replace the docker stack set up with the following
 #     - name: Set up Docker Buildx
