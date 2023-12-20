@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-rest-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: go-rest-app
+  template:
+    metadata:
+      labels:
+        app: go-rest-app
+    spec:
+      containers:
+      - name: go-api-container
+        image: worstface/go-rest-app
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+      - name: postgres-container
+        image: postgres
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+          - name: db-data
+            mountPath: /db-data:/postgres-data
+

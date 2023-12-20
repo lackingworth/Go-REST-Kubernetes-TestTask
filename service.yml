@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-rest-service 
+spec:
+  type: LoadBalancer
+  - name: http
+    port: 80
+    targetPort: 3000 
+  selector:
+    name: go-rest-app
