@@ -70,7 +70,7 @@ jobs:
 #          k8s-url: <server-url>
 #          k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
 #
-#      - name: Checout source code
+#      - name: Checkout source code
 #        uses: actions/checkout@v3
 #
 #      - name: Deploy Kubernetes Cluster
